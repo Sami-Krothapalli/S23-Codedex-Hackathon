@@ -21,12 +21,14 @@
     <div class="container">
         <div class="valentines">
             <div class="envelope">
-                <div class="card">
-                    <div class="text">
-                        Brooklyn Stoop Sale
+                <div class="card-wrapper">
+                    <div class="card">
+                        <div class="text">
+                            Brooklyn Stoop Sale
+                        </div>
+                        <!-- <div class="heart"></div> -->
+    
                     </div>
-                    <!-- <div class="heart"></div> -->
-
                 </div>
             </div>
             <div class="front"></div>
@@ -34,7 +36,16 @@
     </div>
     <script>
         document.getElementsByClassName("card")[0].addEventListener("mouseover", (event) => {
-            confetti()
+            let canvas = document.createElement("canvas");
+            canvas.width = 600;
+            canvas.height = 600;
+            let container = document.getElementsByClassName("card-wrapper")[0];
+            container.appendChild(canvas);
+
+            let confetti_card_hover = confetti.create(canvas);
+            confetti_card_hover().then(() => {
+                container.removeChild(canvas);
+            });
         });
     </script>
  
