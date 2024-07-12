@@ -10,6 +10,7 @@
 
     <!-- Scripts-->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="app.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,16 +37,16 @@
     </div>
     <script>
         document.getElementsByClassName("card")[0].addEventListener("mouseover", (event) => {
-            let canvas = document.createElement("canvas");
-            canvas.width = 600;
-            canvas.height = 600;
-            let container = document.getElementsByClassName("card-wrapper")[0];
-            container.appendChild(canvas);
+            setTimeout( () => {
 
-            let confetti_card_hover = confetti.create(canvas);
-            confetti_card_hover().then(() => {
-                container.removeChild(canvas);
-            });
+                confetti();
+            },750);
+
+            setTimeout( () => {
+                displayInvitation();
+
+            },800);
+
         });
     </script>
  
