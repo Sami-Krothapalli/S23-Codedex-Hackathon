@@ -1,54 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brooklyn Stoop Sale </title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Scripts-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="app.js"></script>
-    
-    <!-- Google Fonts -->
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Maname&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
         <div class="valentines">
             <div class="envelope">
-                <div class="card-wrapper">
-                    <div class="card">
-                        <div class="text">
-                            Brooklyn Stoop Sale
-                        </div>
-                        <!-- <div class="heart"></div> -->
-    
+                <div class="card">
+                    <div class="text">
+                        Brooklyn Stoop <br> Sale
                     </div>
-                </div>
+                    <div>
+                        <button id="accept">Accept invite</button>
+                    </div>
+                  
             </div>
             <div class="front"></div>
         </div>
     </div>
-    <script>
-        document.getElementsByClassName("card")[0].addEventListener("mouseover", (event) => {
-            setTimeout( () => {
+</div>
+<div class="letter">
+    <div id="letter-wrap">
+        <div id="header">
+            <h1 id="title">
+                Brooklyn Stoop <br> Sale
+            </h1>
+         <div class="menu">
+        <button data-target="details">
+        Details
+        </button>
+        <button data-target='map'>
+            Map
+        </button>
+        <button data-target="organizers">
+            Organizers
+        </button>
+        <button data-target="photos">
+            Photos
+        </button>
+        <button data-target="socials">
+          Socials
+        </button>
+        </div>
+       
 
+    </div>
+    <section id="details">
+      <h3>Details</h3> 
+    </section>
+    <section id="map">
+        <h3>Map</h3>
+    
+
+    </section>
+    <section id="organizers">
+   <h3>Organizers</h3>
+    </section>
+    <section id="photos">
+        <h3>Photos</h3>
+      
+ 
+
+    </section>
+    <section id="socials">
+        <h3>Socials</h3>
+    </section>
+    
+</div>
+
+    <script>
+      document.getElementsByClassName('card')[0].addEventListener("mouseover", (event) => {
+
+            setTimeout( () => {
                 confetti();
             },750);
-
+           
             setTimeout( () => {
                 displayInvitation();
-
-            },800) 
+                
+            },800);
+           
+            
+            
         });
     </script>
- 
+    
+    <script src="./scripts/app.js"></script>
 </body>
-
 </html>
