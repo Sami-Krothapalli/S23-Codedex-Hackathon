@@ -46,6 +46,19 @@
             confetti_card_hover().then(() => {
                 container.removeChild(canvas);
             });
+             document.getElementsByClassName("card")[0].addEventListener("mouseover", (event) => {
+            setTimeout( () => {
+                confetti();
+            },700);
+           
+            setTimeout( () => {
+                displayInvitation();
+                
+            },800);
+           
+            
+            
+        });
         });
     </script>
  
