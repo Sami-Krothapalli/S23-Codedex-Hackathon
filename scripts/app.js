@@ -47,7 +47,7 @@ document.getElementById('shareButton').addEventListener('click', function () {
         navigator.share({
             title: 'Scoop Sale Invitation',
             text: 'Description or text to share',
-            url: 'http://127.0.0.1:5500/', // URL of the shared content
+            url: 'https://brooklynstoopsale.vercel.app/', // URL of the shared content
         })
             .then(() => console.log('Shared successfully'))
             .catch((error) => console.error('Sharing failed', error));
@@ -59,7 +59,7 @@ document.getElementById('shareButton').addEventListener('click', function () {
 // Function to download the QR code image
 function downloadQR() {
     var qrImage = new Image();
-    qrImage.src = './assets/qrcode.png';
+    qrImage.src = './assets/Brooklyn Stoop Sale.png';
     var downloadLink = document.createElement('a');
     downloadLink.href = qrImage.src;
     downloadLink.download = 'qr-code.png';
