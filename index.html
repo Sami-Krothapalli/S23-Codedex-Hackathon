@@ -1,141 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Import canvas-confetti library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <title>Document</title>
+    
+    <title>Brooklyn Stoop Sale</title>
+    
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="./styles/style.css">
+    
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Maname&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Maname&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Main container -->
     <div class="container">
+        <!-- Valentine's card animation container -->
         <div class="valentines">
             <div class="envelope">
                 <div class="card">
                     <div class="text">
                         Brooklyn Stoop <br> Sale
                     </div>
-                  
-                  
+                </div>
+                <div class="front"></div>
             </div>
-            <div class="front"></div>
         </div>
     </div>
-</div>
-<div class="letter">
-    <div id="letter-wrap">
-        <div id="header">
-            <h1 id="title">
-                Brooklyn Stoop <br> Sale
-            </h1>
-         <div class="menu">
-        <button data-target="details">
-        Details
-        </button>
-        <button data-target='map'>
-            Map
-        </button>
-        <button data-target="photos">
-            Photos
-        </button>
-        <button data-target="share">
-          Share
-        </button>
-        </div>
 
-    </div>
-    <section id="details">
-      <h1 >Details</h1> 
-      <div id="det-items">
-      <div id="date" onclick="showCalendar()">
-         <b>Date:</b> August 20, 2024
-        </div>
-        <div>
-            <b>Time:</b> 10:00 AM - 5:00 PM
-        </div>
-        <div id="adress-map" onclick="goToMap()">
-            <b>Address: </b>Court Street and 2nd Ave
-           
-        </div>
-        
-    </div>
-      
-    </section>
-    <section id="map">
-        <h1>Map</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12103.04850179047!2d-74.01576078509603!3d40.67920991238332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a58118fdf65%3A0x1636270596a992dc!2sCarroll%20Gardens%2C%20Brooklyn%2C%20NY!5e0!3m2!1sen!2sus!4v1720782678714!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map-id"></iframe>
-    
-
-    </section>
-    
-    <section id="photos">
-        <h1>Photos</h1>
-       <div class="images">
-        <div>
-        <img src="./assets/pexels-badun-17351233.jpg" alt="Stoop Sale">
-
-        </div>
-        <div>
-        <img src="./assets/pexels-gorazd-nikoloski-241208117-12310709.jpg" alt="Stoop Sale">
-
-        </div>
-        <div>
-        <img src="./assets/pexels-minan1398-1087727.jpg" alt="Stoop Sale">
-
-        </div>
-        <div>
-        <img src="./assets/pexels-paulita-179959.jpg" alt="Stoop Sale">
-
-        </div>
-        <div>
-        <img src="./assets/pexels-quang-nguyen-vinh-222549-2155552.jpg" alt="Stoop Sale">
-
-        </div>
-
-
-        
-
-       </div>
-      
- 
-
-    </section>
-    <section id="share">
-        <h1>Share</h1>
-        Share:
-        <button id="shareButton"><i class="fa-solid fa-share-from-square fa-2xl" style="color: #1f2551;"></i></button>
-        Download QR:
-        <button id="showQR" onclick="downloadQR()"><i class="fa-solid fa-qrcode fa-2xl" style="color: #252438;"></i></button>
-
-    </section>
-    
-</div>
-</div>
-<script src="https://kit.fontawesome.com/627dc2caf9.js" crossorigin="anonymous"></script>
-    <script>
-      document.getElementsByClassName('card')[0].addEventListener("mouseover", (event) => {
-
-            setTimeout( () => {
-                confetti();
-            },500);
-           
-            setTimeout( () => {
-                displayInvitation();
+    <!-- Hidden letter content -->
+    <div class="letter">
+        <div id="letter-wrap">
+            <div id="header">
+                <h1 id="title">
+                    Brooklyn Stoop <br> Sale
+                </h1>
                 
-            },550);
-           
+                <!-- Navigation menu -->
+                <div class="menu">
+                    <button data-target="details">Details</button>
+                    <button data-target='map'>Map</button>
+                    <button data-target="photos">Photos</button>
+                    <button data-target="share">Share</button>
+                </div>
+            </div>
             
+            <!-- Event details section -->
+            <section id="details">
+                <h1>Details</h1> 
+                <div id="det-items">
+                    <div id="date" onclick="showCalendar()">
+                        <b>Date:</b> August 20, 2024
+                    </div>
+                    <div>
+                        <b>Time:</b> 10:00 AM - 5:00 PM
+                    </div>
+                    <div id="adress-map" onclick="goToMap()">
+                        <b>Address:</b> Court Street and 2nd Ave
+                    </div>
+                </div>
+            </section>
             
+            <!-- Map section -->
+            <section id="map">
+                <h1>Map</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12103.04850179047!2d-74.01576078509603!3d40.67920991238332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a58118fdf65%3A0x1636270596a992dc!2sCarroll%20Gardens%2C%20Brooklyn%2C%20NY!5e0!3m2!1sen!2sus!4v1720782678714!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="map-id"></iframe>
+            </section>
+            
+            <!-- Photo gallery section -->
+            <section id="photos">
+                <h1>Photos</h1>
+                <div class="images">
+                    <div><img src="./assets/pexels-badun-17351233.jpg" alt="Stoop Sale"></div>
+                    <div><img src="./assets/pexels-gorazd-nikoloski-241208117-12310709.jpg" alt="Stoop Sale"></div>
+                    <div><img src="./assets/pexels-minan1398-1087727.jpg" alt="Stoop Sale"></div>
+                    <div><img src="./assets/pexels-paulita-179959.jpg" alt="Stoop Sale"></div>
+                    <div><img src="./assets/pexels-quang-nguyen-vinh-222549-2155552.jpg" alt="Stoop Sale"></div>
+                </div>
+            </section>
+            
+            <!-- Share section -->
+            <section id="share">
+                <h1>Share</h1>
+                Share:
+                <button id="shareButton"><i class="fa-solid fa-share-from-square fa-2xl" style="color: #1f2551;"></i></button>
+                Download QR:
+                <button id="showQR" onclick="downloadQR()"><i class="fa-solid fa-qrcode fa-2xl" style="color: #252438;"></i></button>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Import FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/627dc2caf9.js" crossorigin="anonymous"></script>
+    
+    <!-- Inline script for confetti and invitation display -->
+    <script>
+        document.getElementsByClassName('card')[0].addEventListener("mouseover", (event) => {
+            setTimeout(() => {
+                confetti();
+            }, 500);
+            
+            setTimeout(() => {
+                displayInvitation();
+            }, 550);
         });
     </script>
     
+    <!-- Link to external JavaScript file -->
     <script src="./scripts/app.js"></script>
 </body>
 </html>
