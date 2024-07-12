@@ -89,6 +89,15 @@ body{
     bottom: 20px;
     border-radius: 50% 0 0 50%;
 }
+
+.card-wrapper canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events:none;
+}
+
 .card .button-wrapper::before{
     content: '';
     position: absolute;
